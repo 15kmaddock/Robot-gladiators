@@ -54,3 +54,40 @@ var fight = function() {
 };
 
 fight();
+
+var promptFight = window.prompt("Would you like to FIGHT or SKIP this Battle? Enter 'FIGHT' or SKIP to choose.");
+
+if (promptFight === "fight" || promptFight === "FIGHT") {
+
+    enemyHealth = enemyHealth - playerAttack;
+
+    console.log (
+        playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
+    );
+
+    //check enemy's health 
+    if ( enemyHealth <=0) {
+        window.alert(enemyName + " has died!");
+    } else {
+        window.alert(enemyName + " still has " + enemyHealth + " health left.");
+    }
+
+// remove players health by subtracting the amount set in the enemyAttack variable
+
+playerHealth = playerHealth - enemyAttack;
+
+console.log(
+    enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
+);
+
+// check players health
+
+if (playerHealth <=0) {
+    window.alert(playerName + " health left.");
+} else {
+    window.alert(playerName + "still has " + playerHealth + "health left.");
+}
+
+
+
+}
